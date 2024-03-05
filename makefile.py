@@ -19,10 +19,10 @@ def unzip_student(filename, dirname):
                 os.mkdir(dirname + "/" + name[10])
             zip.extract(name, dirname + "/" + name[10]) # 在 A、B、C 解壓縮
 
-def unzip_ecourse(dirname): # dirname = weekXX
-    filename = dirname + ".zip" # filename = weekXX.zip
+def unzip_ecourse(filename, dirname): # dirname = weekXX
+    print(filename, dirname)
     assert (zipfile.is_zipfile(filename))
-    zip = zipfile.ZipFile(dirname + ".zip")
+    zip = zipfile.ZipFile(filename)
     for name in zip.namelist():
         if name.find("_assignsubmission_file") != -1:   # 同學會有 2 個檔案，這個才是他的 zip
             # print(name)
@@ -37,5 +37,5 @@ if __name__ == "__main__":
             dirname = file[0:6] # dirname = weekXX
             if files.count(dirname) == 0:   # 如果沒有 weekXX
                 os.mkdir(dirname) # 建 weekXX
-            unzip_ecourse(dirname)  # unzip
+            unzip_ecourse(file, dirname)  # unzip
             clean(dirname) # 刪掉不要的東西
