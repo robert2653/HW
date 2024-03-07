@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>week01/D/412415026_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412415014_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    long long Ax, Ay, Bx, By, Cx, Cy,num ,ax ,ay ,bx ,by;
+    scanf("%lld %lld %lld %lld %lld %lld",&amp;Ax,&amp;Ay,&amp;Bx,&amp;By,&amp;Cx,&amp;Cy);
+    ax= Bx-Ax;
+<a name="0"></a><font color="#FF0000"><a href="match77-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_41.gif"/></a>
+
+    ay= By-Ay;
+    bx= Cx-Ax;
+    by= Cy-Ay;
+    num=ax*by-ay*bx;
+    if(num&gt;0){
+        printf("Left");
+    }else if(num==0){
+        printf("Touch");
+    }else if(num&lt;0){
+</font>        printf("Right");
+    }
+    return 0;
+}
+</pre>
+</body>
+</html>

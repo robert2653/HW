@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>week02/C/412430025_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/412430038_C.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int n;
+
+    scanf("%d", &amp;n);
+
+    for (int i = 1; i &lt;= n; i++) {
+
+        for (int j = 1; j &lt;= n - i; j++) {
+            printf(" ");        // 輸出空白，共 n-i 個
+        }
+
+<a name="0"></a><font color="#FF0000"><a href="match13-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_10.gif"/></a>
+
+        for (int k = 1; k &lt;= 2 * i - 1; k++) {
+            // 判斷是否在三角形的最左側或最右側，如果是則輸出米字
+</font><a name="1"></a><font color="#00FF00"><a href="match13-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_10.gif"/></a>
+
+            if (k == 1 || k == 2 * i - 1 || i == n) {
+</font>                printf("*"); // 輸出米字，共 2*i-1 個
+            } else {
+                printf(" "); // 輸出空白
+            }
+        }
+        printf("\n");
+    }
+
+    for (int u = 1; u &lt;= n; u++){
+        for (int t = 1; t &lt;= n-1; t++) {
+            printf(" ");
+        }
+        printf("*");
+        printf("\n");
+    }
+    return 0;
+}
+
+
+</pre>
+</body>
+</html>

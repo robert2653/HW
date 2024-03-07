@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>week02/A/412415047_A.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/A/409430048_A.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int n, odd = 0;
+<a name="0"></a><font color="#FF0000"><a href="match71-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_15.gif"/></a>
+
+    scanf("%d", &amp;n);
+
+    int num[n];
+    for(int i = 0; i &lt; n; i++)
+    {
+        scanf("%d", &amp;num[i]);
+</font>    }
+
+/*假設輸入是 5 4 3 4 3 ，轉成二進制連續做XOR:
+101 ^ 100 = 001
+      011 ^ 001 = 010
+      100 ^ 010 = 110
+      011 ^ 110 = 101
+重複出現偶數次的會被消掉，等於自己跟自己做XOR等於000*/
+    for(int i = 0; i &lt; n; i++) 
+    {                               
+        odd ^= num[i];
+    }
+
+    printf("%d", odd);
+
+    return 0;
+}
+
+
+
+</pre>
+</body>
+</html>

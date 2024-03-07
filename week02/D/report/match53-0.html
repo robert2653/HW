@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>week02/D/412415035_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412415035_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int min_operations(int arr[], int n, int k)
+{
+
+    int a[2000];
+    for (int i = 0; i &lt; n; i++)
+    {
+        a[i]=arr[i]%k;
+        if(a[i]==0)
+        {
+            return 0;
+            break;
+        }
+    }
+    if(k!=4)
+    {
+        int max=0;
+        for(int i=0;i&lt;n;i++)
+        {
+            if(a[i]&gt;max)
+                max=a[i];
+        }
+        return k-max;
+    }
+    else
+    {
+        int max2=0;
+        for(int i=0;i&lt;n;i++)
+        {
+            if(a[i]&gt;max2)
+                max2=a[i];
+        }
+
+        int num2=0,num1=0;
+        for(int i=0;i&lt;n;i++)
+        {
+            if(arr[i]%2==0)
+                num2++;
+            if(arr[i]%2==1)
+                num1++;
+        }
+        if(num2&gt;=2)
+            return 0;
+        if(num2==1 &amp;&amp; num1&gt;=1 )
+            return 1;
+        if(num2==0 &amp;&amp; num1&gt;=2 &amp;&amp; max2!=3)
+            return 2;
+        if(num2==0 &amp;&amp; num1&gt;=2 &amp;&amp; max2==3)
+            return 1;
+        if(num2==1 &amp;&amp; num1==0)
+            return 4-max2;
+        if(num2==0 &amp;&amp; num1==1)
+            return 4-max2;
+
+    }
+}
+
+int main()
+{
+    int t;
+    scanf("%d", &amp;t);
+
+    while (t&gt;0)
+    {
+        int n, k;
+<a name="0"></a><font color="#FF0000"><a href="match53-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_8.gif"/></a>
+
+        scanf("%d %d", &amp;n, &amp;k);
+
+        int arr[n];
+        for (int i = 0; i &lt; n; i++)
+        {
+            scanf("%d", &amp;arr[i]);
+</font>        }
+        int result = min_operations(arr, n, k);
+        printf("%d\n", result);
+        t--;
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

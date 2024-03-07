@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>week02/D/412415021_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412415021_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+<a name="0"></a><font color="#FF0000"><a href="match5-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_99.gif"/></a>
+
+int main(){
+    int unit, time, k, test = 0;
+    long long temp2, temp1;
+    scanf("%d", &amp;time);
+    for(int i = 0; i &lt; time; i++){
+        scanf("%d %d", &amp;unit, &amp;k);
+        scanf("%lld", &amp;temp1);
+        temp1 %= k;
+    	if(unit == 1 &amp;&amp; k == 4 &amp;&amp; temp1 % 4 == 2){
+        	test = 2; 
+		}
+        if(k == 1){
+        	test = 1;
+		}
+        if(temp1 % 4 == 2 &amp;&amp; k == 4){
+        	k = 2;
+        	temp1 /= 2;
+		}
+		if(temp1 == 0){
+			test = 1;
+		}
+        for(int j = 0; j &lt; unit - 1; j++){
+            scanf("%lld", &amp;temp2);
+            temp2 %= k;
+            if(temp2 == 0){
+                test = 1;
+            }
+            if(temp2 % 2 == 0 &amp;&amp; k == 4){
+            	k = 2;
+            	temp2 /= 2;
+            	temp1 %= 2;
+			}
+            if(k - temp1 &gt; k - temp2){
+                temp1 = temp2;
+            }
+        }
+        if(test == 2){
+        	printf("2\n");
+		}
+        else if(test == 1){
+        	printf("0\n");
+		}
+		else if(k == 4 &amp;&amp; unit &gt; 1 &amp;&amp; temp1 == 1){
+			printf("2\n");
+		}
+		else{
+			printf("%lld\n", k - temp1);
+		}
+		test = 0;
+</font>    }
+}</pre>
+</body>
+</html>

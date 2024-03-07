@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>week02/D/412910007_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412430040_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+
+<a name="0"></a><font color="#FF0000"><a href="match18-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_12.gif"/></a>
+
+int main() {
+    int t;
+    scanf("%d", &amp;t);
+    for (int m = 0; m &lt; t; m++) {
+        int N, k;
+        scanf("%d %d", &amp;N, &amp;k);
+        int a[N];
+</font>        int b[N];
+        for (int i = 0; i &lt; N; i++) {
+            scanf("%d", &amp;a[i]);
+            b[i] = a[i] % k;
+        }
+        int p = 1;
+        for (int i = 0; i &lt; N; i++){
+            p *= b[i];
+        }
+
+        if( p==0 ){
+            printf("0\n");
+        }
+        else if (k == 4) {
+             int two = 0;
+             int c = 1;
+             for (int i = 0; i &lt; N; i++) {
+                c *= b[i];
+                if (a[i] % 2 == 0) {
+                    two+=1;
+                }
+            }
+            if(two &gt;= 2){
+                printf("0\n");
+            }else if((two == 1)&amp;&amp;(N&gt;=2)){
+                printf("1\n");
+            }else if((c == 1)&amp;&amp;(N&gt;=2)){
+                printf("2\n");
+            }else{
+                int e = b[0];
+                for(int i=1;i&lt;N ;i++){
+                if(b[i]&gt;e){
+                e = b[i];
+               }
+            }
+            printf("%d\n", k-e);
+            }
+        }
+        else if ((k == 1)||(k == 2)||(k == 3)||(k == 5)){
+            int e = b[0];
+            for(int i=1;i&lt;N ;i++){
+               if(b[i]&gt;e){
+                e = b[i];
+            }
+        }
+            printf("%d\n", k - e);
+        }
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

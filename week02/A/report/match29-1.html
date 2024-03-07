@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>week02/A/412910007_A.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/A/412415054_A.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+<a name="0"></a><font color="#FF0000"><a href="match29-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_50.gif"/></a>
+
+int main()
+{
+    int n,i;
+    scanf("%d",&amp;n);
+    int a[n];
+    for(i=0;i&lt;n;i++){
+        scanf("%d",&amp;a[i]);
+    }
+    int result=a[0];
+</font>    for(i=1;i&lt;n;i++){
+        result=result^a[i];
+    }
+
+    printf("%d",result);
+
+    return 0;
+}
+</pre>
+</body>
+</html>

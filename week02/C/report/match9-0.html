@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>week02/C/412430027_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/412430027_C.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int num;
+    scanf("%d", &amp;num);
+
+    int x = num - 1, y = 0;
+
+    for(int i = 0; i &lt; num; i++) {
+
+<a name="0"></a><font color="#FF0000"><a href="match9-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_62.gif"/></a>
+
+        for(int j = 0; j &lt; num * 2 - 1; j++) {
+
+            if(i == num - 1) {
+                printf("*");
+            }
+            else if((i == y &amp;&amp; j == x - y) || (i == y &amp;&amp; j == x + y)) {
+                printf("*");
+            }
+            else if(j &lt; x + y) {
+                printf(" ");
+            }
+        }
+        printf("\n");
+
+
+        y++;
+    }
+
+    for(int i = 0; i &lt; num; i++) {
+
+
+        for(int j = 0; j &lt; num - 1; j++) {
+
+            printf(" ");
+</font>        }
+        printf("*\n");
+    }
+    return 0;
+}
+</pre>
+</body>
+</html>

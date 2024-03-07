@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>week01/D/412430032_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/410420132_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+<a name="0"></a><font color="#FF0000"><a href="match194-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_32.gif"/></a>
+
+int main()
+{
+    double a1, a2, b1, b2, c1, c2;
+    double x1, y1, x2, y2;
+
+    scanf("%lf%lf%lf%lf%lf%lf", &amp;a1, &amp;a2, &amp;b1, &amp;b2, &amp;c1, &amp;c2);
+</font>
+    x1 = b1 - a1;
+    y1 = b2 - a2;
+    x2 = c1 - a1;
+    y2 = c2 - a2;
+
+    if ((x1 * y2 - x2 * y1) &gt; 0){
+        printf("Left");
+    }
+    else if  ((x1 * y2 - x2 * y1) &lt; 0){
+        printf("Right");
+    } else{
+        printf("Touch");
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

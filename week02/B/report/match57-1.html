@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>week02/B/412415049_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412415072_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int a;
+    scanf("%d", &amp;a);
+<a name="0"></a><font color="#FF0000"><a href="match57-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_32.gif"/></a>
+
+    int b[a];
+    for(int i=0;i&lt;a;i++)
+    {
+        scanf("%d",&amp;b[i]);
+    }
+    for(int i=0;i&lt;a;i++)
+</font>    {
+        if(b[i]&lt;=1)
+        {
+            printf("No\n");
+            continue;
+        }
+        int c=1;
+        for(int j=2;j*j&lt;=b[i];j++)
+        {
+            if(b[i]%j==0)
+            {
+                c=0;
+                break;
+            }
+        }
+        if(c)
+        {
+            printf("Yes\n");
+        }
+        else
+        {
+            printf("No\n");
+        }
+    }
+    return 0;
+}
+</pre>
+</body>
+</html>

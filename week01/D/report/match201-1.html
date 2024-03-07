@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>week01/D/412430019_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412415023_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+<a name="0"></a><font color="#FF0000"><a href="match201-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_23.gif"/></a>
+
+int main() {
+    long ax, ay, bx, by, cx, cy;
+    scanf("%ld%ld%ld%ld%ld%ld", &amp;ax, &amp;ay, &amp;bx, &amp;by, &amp;cx, &amp;cy);
+
+    double vx = (double)(bx - ax);
+</font>    double vy = (double)(by - ay);//ab向量
+
+    double ux = (double)(cx - ax);
+    double uy = (double)(cy - ay);//ac向量
+
+    double position = (double)(vx*uy-vy*ux);//外積行列式
+
+    if(position &gt; 0){
+        printf("left\n");
+    }
+    else if(position &lt; 0){
+        printf("right\n");
+    }
+    else if(position == 0){
+        printf("touch\n");
+    }
+    return 0;
+}
+</pre>
+</body>
+</html>

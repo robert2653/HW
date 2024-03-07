@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>week01/D/410415005_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/410415005_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+<a name="1"></a><font color="#00FF00"><a href="match7-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_33.gif"/></a>
+
+int main() {
+    double ax, ay, bx, by, cx, cy, x1, y1, x2, y2, cro;
+    scanf("%lf %lf %lf %lf %lf %lf",&amp;ax, &amp;ay, &amp;bx, &amp;by, &amp;cx, &amp;cy);
+</font>    x1=(bx-ax);
+<a name="0"></a><font color="#FF0000"><a href="match7-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_48.gif"/></a>
+
+    y1=(by-ay);
+    x2=(cx-ax);
+    y2=(cy-ay);
+    cro=(x1*y2)-(x2*y1);
+    if (cro&gt;0)
+        printf("Left\n");
+    else if (cro&lt;0)
+        printf("Right\n");
+    else
+        printf("Touch\n");
+
+    return 0;
+</font>}
+</pre>
+</body>
+</html>

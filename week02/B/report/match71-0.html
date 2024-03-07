@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>week02/B/412430043_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412430043_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    int t, m, y;
+    scanf("%d", &amp;t);
+    int target[t];
+<a name="0"></a><font color="#FF0000"><a href="match71-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_19.gif"/></a>
+
+    for (int i = 0; i &lt; t; i++) {
+        scanf("%d", &amp;target[i]);
+    }
+    for (int i = 0; i &lt; t; i++) {
+</font>        y = 0;
+        if (target[i] == 1) {
+            printf("No\n");
+            continue;
+        }
+        else if (target[i] == 2 || target[i] == 3) {
+            printf("Yes\n");
+            continue;
+        }
+        else {
+            m = target[i] % 6;
+            if (m != 1 &amp;&amp; m != 5) {
+                printf("No\n");
+                continue;
+            }
+            for (int j = 2; j &lt;= sqrt(target[i]) + 1; j++) {
+                if (target[i] % j == 0) {
+                    printf("No\n");
+                    y++;
+                    break;
+                }
+            }
+        }
+        if (y == 0) {
+            printf("yes\n");
+        }
+    }
+    return 0;
+}</pre>
+</body>
+</html>

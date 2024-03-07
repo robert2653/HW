@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>week02/C/412415029_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/412415025_C.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int lay,i,j,num;
+
+    scanf("%d",&amp;lay);
+    num=lay*2-1;
+    for(i=0;i&lt;lay-1;i++)
+    {
+<a name="0"></a><font color="#FF0000"><a href="match42-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_29.gif"/></a>
+
+        for(j=1;j&lt;=num;j++)
+        {
+            if (j==(lay+i) &amp;&amp; j==(lay+i))
+            {
+                printf("*");
+                break;
+            }
+
+            else if(j==lay-i)
+            {
+                printf("*");
+            }
+
+            else if (j==(lay+i))
+            {
+                printf("*");
+</font>                break;
+            }
+
+            else
+            {
+               printf(" ");
+            }
+
+        }
+        printf("\n");
+    }
+
+    for(j=1;j&lt;=num;j++)
+    {
+      printf("*");
+    }
+    printf("\n");
+    for(j=1;j&lt;=lay;j++)
+    {
+      for(i=1;i&lt;lay;i++)
+      {
+        printf(" ");
+      }
+      printf("*\n");
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

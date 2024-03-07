@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>week01/D/412415015_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412415015_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    long a1, a2, b1, b2, c1, c2;
+<a name="0"></a><font color="#FF0000"><a href="match64-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_60.gif"/></a>
+
+    scanf("%ld %ld %ld %ld %ld %ld", &amp;a1, &amp;a2, &amp;b1, &amp;b2, &amp;c1, &amp;c2);
+    long cross;
+    cross=(b1-a1)*(c2-a2)-(b2-a2)*(c1-a1);
+    if(cross==0){
+        printf("Touch");
+    }
+    else if(cross&lt;0){
+        printf("Right");
+    }
+    else{
+        printf("Left");
+    }
+    return 0;
+</font>}
+</pre>
+</body>
+</html>

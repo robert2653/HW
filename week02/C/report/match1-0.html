@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>week02/C/411422089_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/411422089_C.c<p></p><pre>
+#include &lt;stdio.h&gt;
+
+void printSpaces(int num) {
+    for (int i = 0; i &lt; num; i++) {
+        printf(" ");
+    }
+}
+
+void drawChristmasTree(int rows) {
+<a name="0"></a><font color="#FF0000"><a href="match1-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_11.gif"/></a>
+
+    // 畫出聖誕樹的上半部分
+    for (int i = 1; i &lt; rows; i++) {
+</font>        printSpaces(rows - i); // 輸出前面的空格
+        printf("*");
+
+        if (i == 1)
+        {
+<a name="2"></a><font color="#0000FF"><a href="match1-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_10.gif"/></a>
+
+            printf("\n"); // 如果是第一行，直接換行
+</font>        }
+        else
+        {
+<a name="1"></a><font color="#00FF00"><a href="match1-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_10.gif"/></a>
+
+            // 输出星號後面的空格
+            for (int j = 0; j &lt; 2*(i-1)-1; j++)
+</font>            {
+                printf(" ");
+            }
+            printf("*\n");
+        }
+    }
+<a name="3"></a><font color="#00FFFF"><a href="match1-1.html#3" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_3_9.gif"/></a>
+
+    for(int i=0;i &lt; rows*2-1;i++){
+        printf("*");
+    }
+    printf("\n");
+
+    // 畫出聖誕樹的樹幹
+</font>    for (int i = 0; i &lt; rows ; i++) {
+        printSpaces(rows - 1);
+        printf("*\n");
+    }
+}
+
+int main() {
+    int rows;
+
+
+    scanf("%d", &amp;rows);
+
+    drawChristmasTree(rows);
+
+    return 0;
+}
+</pre>
+</body>
+</html>

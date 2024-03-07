@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>week02/C/411710014_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/411710014_C.c<p></p><pre>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+int main(){
+
+
+int i,n=0;
+
+
+scanf("%d",&amp;n);
+
+
+
+for (i = 0; i &lt; n-1; i++) {
+        // 打印空格
+        for (int j = 1; j &lt; n - i; j++) {
+            printf(" ");}
+          printf("*");
+       
+
+        for (int j = 1; j &lt; 2 * i; j++) {
+            printf(" ");
+        }
+        if (i != 0) {
+            printf("*");
+        }
+
+
+printf("\n");
+    }
+
+//聖誕樹的底部
+<a name="0"></a><font color="#FF0000"><a href="match34-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_24.gif"/></a>
+
+for (int i=0;i&lt;(n*2-1);i++){
+    printf("*");
+}
+printf("\n");
+for(int i=0;i&lt;(n);i++){
+    for (int i=0;i&lt;(n-1);i++){
+   printf(" ");
+}
+printf("*");
+printf("\n");}
+
+
+
+    return 0;
+</font>}</pre>
+</body>
+</html>

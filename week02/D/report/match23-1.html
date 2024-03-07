@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>week02/D/412415060_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412415072_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int j,t,c=0;
+    scanf("%d",&amp;t);
+    int b[t];
+    for(j=0;j&lt;t;j++)
+    {
+        int n,k,i,h=1,count=0;
+<a name="0"></a><font color="#FF0000"><a href="match23-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_7.gif"/></a>
+
+        int odd=0,even=0,four=0,four1=0,two=0;
+        scanf("%d%d",&amp;n,&amp;k);
+        int a[n];
+        for(i=0;i&lt;n;i++)
+        {
+            scanf("%d",&amp;a[i]);
+</font>        }
+        switch(k)
+        {
+            case 1:
+            b[c]=0;
+            c++;
+            break;
+            case 2:
+            for(i=0;i&lt;n;i++)
+            {
+                if(a[i]%2==0)
+                {
+                    even++;
+                }
+                else
+                {
+                    odd++;
+                }
+            }
+            if(even!=0)
+            {
+                b[c]=0;
+                c++;
+            }
+            else
+            {
+                b[c]=1;
+                c++;
+            }
+            break;
+            case 4:
+            for(i=0;i&lt;n;i++)
+            {
+                if(a[i]%2==0)
+                {
+                    even++;
+                }
+                else
+                {
+                    odd++;
+                }
+                if(a[i]%4==2)
+                {
+                    two++;
+                }
+                if(a[i]%4==0)
+                {
+                    four++;
+                }
+                else if(a[i]%4==3)
+                {
+                    four1++;
+                }
+            }
+            if(even&gt;1 || four!=0)
+            {
+                b[c]=0;
+                c++;
+            }
+            else if(even==1 &amp;&amp; odd&gt;0)
+            {
+                b[c]=1;
+                c++;
+            }
+            else if(four1!=0)
+            {
+                b[c]=1;
+                c++;
+            }
+            else if(even==0 &amp;&amp; odd&gt;1)
+            {
+                b[c]=2;
+                c++;
+            }
+            else if(two!=0)
+            {
+                b[c]=2;
+                c++;
+            }
+            else
+            {
+                b[c]=3;
+                c++;
+            }
+            break;
+            default:
+            while(h)
+            {
+                for(i=0;i&lt;n;i++)
+                {
+                    if(a[i]%k==0)
+                    {
+                        h=0;
+                        break;
+                    }
+                }
+                for(i=0;i&lt;n;i++)
+                {
+                    a[i]++;
+                }
+                count++;
+            }
+            b[c]=count-1;
+            c++;
+            break;
+        }
+    }
+    for(j=0;j&lt;t;j++)
+    {
+        printf("%d\n",b[j]);
+    }
+    return 0;
+}
+</pre>
+</body>
+</html>

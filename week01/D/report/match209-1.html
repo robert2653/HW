@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>week01/D/412430002_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412430025_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+long long int cross_product(long long int ax, long long int ay, long long int bx, long long int by, long long int cx, long long int cy) {
+    return (bx - ax) * (cy - ay) - (by - ay) * (cx - ax);
+}
+
+int main() {
+<a name="0"></a><font color="#FF0000"><a href="match209-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_25.gif"/></a>
+
+    long long int ax, ay, bx, by, cx, cy;
+
+
+    scanf("%lld %lld %lld %lld %lld %lld", &amp;ax, &amp;ay, &amp;bx, &amp;by, &amp;cx, &amp;cy);
+
+
+    long long int cross = cross_product(ax, ay, bx, by, cx, cy);
+</font>
+    if (cross &gt; 0) {
+        printf("Left\n");
+    } else if (cross &lt; 0) {
+        printf("Right\n");
+    } else {
+        printf("Touch\n");
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

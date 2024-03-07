@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>week02/B/409430048_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412430018_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+    int t, x;
+
+    scanf("%d", &amp;t);
+
+    for(int i = 0; i &lt; t; i++){
+        scanf("%d", &amp;x);
+
+        int result = 1;
+
+        if(x == 1){
+            result = 0;
+        }else{
+<a name="0"></a><font color="#FF0000"><a href="match88-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_40.gif"/></a>
+
+            for(int j = 2; j &lt;= sqrt(x); j++){
+                if(x % j == 0){
+                    result = 0;
+                    break;
+                }
+            }
+        }
+
+        if(result){
+            printf("Yes\n");
+        }else{
+            printf("No\n");
+</font>        }
+
+
+    }
+    return 0;
+}</pre>
+</body>
+</html>

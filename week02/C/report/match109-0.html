@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>week02/C/411421001_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/411421001_C.c<p></p><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+	int n;
+	scanf("%d",&amp;n);
+	
+	for(int i=0; i&lt;n-1; i++){
+		for(int j=0; j&lt;n-(i+1); j++){
+			printf(" ");
+		}
+		for(int k=0; k&lt;2*i+1; k++){
+			if(k==0 || k==2*i){
+				printf("*");
+			}
+			else{
+<a name="0"></a><font color="#FF0000"><a href="match109-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_21.gif"/></a>
+
+				printf(" ");
+			}
+		}
+		printf("\n");
+	}
+	
+	for(int l=0; l&lt;2*n-1; l++){
+		printf("*");
+	}
+	printf("\n");
+	
+	for(int a=0; a&lt;n; a++){
+</font>		for(int b=0; b&lt;n-1; b++){
+			printf(" ");
+		}
+		printf("*\n");
+	}
+}
+</pre>
+</body>
+</html>

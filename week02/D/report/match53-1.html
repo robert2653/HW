@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>week02/D/412415035_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412415002_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int t,n,k,judge=100,i,compare=100;
+    scanf("%d",&amp;t);
+    for(int j=0;j&lt;t;j++)
+    {
+        compare = 100;
+        judge = 100;
+        int even=0;
+<a name="0"></a><font color="#FF0000"><a href="match53-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_4.gif"/></a>
+
+        scanf("%d %d",&amp;n,&amp;k);
+        int a[n];
+        for(int i=0;i&lt;n;i++)
+        {
+            scanf("%d",&amp;a[i]);
+</font>        }//輸入
+
+        if(k==1)//倍數=1
+        {
+            printf("0\n");
+        }
+
+        if(k==2)//倍數=2
+        {
+            for(i=0;i&lt;n;i++)
+            {
+                if(a[i]%2==0)
+                {
+                    judge=0;
+                }
+                else
+                {
+                    judge = 1;
+                }
+                if(compare&gt;judge)
+                {
+                    compare=judge;
+                }
+            }printf("%d\n",compare);
+
+        }
+        if(k==3)//倍數=3
+        {
+            for(i=0;i&lt;n;i++)
+            {
+                if(a[i]%3==0)
+                {
+                    judge = 0;
+                }
+                if(a[i]%3!=0 &amp;&amp; a[i]%3==2)
+                {
+                    judge = 1;
+                }
+                if(a[i]%3!=0 &amp;&amp; a[i]%3!=2&amp;&amp; a[i]%3==1)
+                {
+                    judge = 2;
+                }
+                if(compare&gt;judge)
+                {
+                    compare = judge;
+                }
+            }printf("%d\n",compare);
+
+        }
+        if(k==5)//倍數=5
+        {
+            for(i=0;i&lt;n;i++)
+            {
+                if(a[i]%5==0)
+                {
+                    judge = 0;
+                }
+                if(a[i]%5!=0 &amp;&amp; a[i]%5==4)
+                {
+                    judge = 1;
+                }
+                if(a[i]%5!=0 &amp;&amp; a[i]%5!=4 &amp;&amp; a[i]%5==3)
+                {
+                    judge = 2;
+                }
+                if(a[i]%5!=0 &amp;&amp; a[i]%5!=4 &amp;&amp; a[i]%5!=3 &amp;&amp; a[i]%5==2)
+                {
+                    judge = 3;
+                }
+                if(a[i]%5!=0 &amp;&amp; a[i]%5!=4 &amp;&amp; a[i]%5!=3 &amp;&amp; a[i]%5!=2 &amp;&amp; a[i]%5==1)
+                {
+                    judge = 4;
+                }
+                if(compare&gt;judge)
+                {
+                    compare = judge;
+                }
+            }printf("%d\n",compare);
+        }
+        if(k==4)
+        {
+            for(i=0;i&lt;n;i++)
+            {
+                if(n==1)
+                {
+                    if(a[i]%4==0)
+                    {
+                        judge = 0;
+                    }
+                    if(a[i]%4==1)
+                    {
+                        judge = 3;
+                    }
+                    if(a[i]%4==2)
+                    {
+                        judge = 2;
+                    }
+                    if(a[i]%4==3)
+                    {
+                        judge = 1;
+                    }
+                     if(compare&gt;judge)
+                    {
+                        compare = judge;
+                    }
+                }
+                if(n&gt;=2)
+                {
+                    if(a[i]%4==0)
+                    {
+                        even=even+2;
+                    }
+                    else if(a[i]%2==0)
+                    {
+                        even++;
+                    }
+
+                    if(even&gt;=2)
+                    {
+                        judge = 0;
+                    }
+                    if(even==1)
+                    {
+                        judge = 1;
+                    }
+                    if(even==0)
+                    {
+                        judge = 2;
+                        if(a[i]%4==3)
+                        {
+                            judge=1;
+
+                        }
+                    }
+                    if(compare&gt;judge)
+                    {
+                        compare = judge;
+                    }
+                }
+            }printf("%d\n",compare);
+
+        }
+
+
+    }
+    return 0;
+}
+
+</pre>
+</body>
+</html>

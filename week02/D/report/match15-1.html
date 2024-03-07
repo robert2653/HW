@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>week02/D/412910007_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412430012_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX_N 1000
+
+int min_operations(int n, int k, int magic[MAX_N]) {
+    int min_magic = magic[0];
+    for (int i = 1; i &lt; n; i++) {
+        if (magic[i] &lt; min_magic) {
+            min_magic = magic[i];
+        }
+    }
+    
+    int operations = 0;
+    for (int i = 0; i &lt; n; i++) {
+        operations += (magic[i] - min_magic + k - 1) / k; // 使用向上取整的方法計算操作次數
+    }
+    
+    return operations;
+}
+
+int main() {
+    int t;
+    scanf("%d", &amp;t);
+    
+    while (t--) {
+<a name="0"></a><font color="#FF0000"><a href="match15-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_19.gif"/></a>
+
+        int n, k;
+        scanf("%d %d", &amp;n, &amp;k);
+        
+        int magic[MAX_N];
+        for (int i = 0; i &lt; n; i++) {
+            scanf("%d", &amp;magic[i]);
+        }
+        
+        int operations = min_operations(n, k, magic);
+</font>        printf("%d\n", operations);
+    }
+    
+    return 0;
+}
+
+</pre>
+</body>
+</html>

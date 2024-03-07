@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>week02/B/412430040_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412430025_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+    int t;
+    scanf("%d", &amp;t);
+
+    for(int j = 0; j &lt; t; j++){
+        int x;
+        scanf("%d", &amp;x);
+
+        int prime = 1;
+<a name="0"></a><font color="#FF0000"><a href="match94-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_37.gif"/></a>
+
+        for(int i = 2; i &lt;= sqrt(x); i++){
+            if(x % i == 0){
+                prime = 0;
+                break;
+            }
+        }
+
+        if(prime == 1 &amp;&amp; x &gt; 1){
+</font>            printf("Yes\n");
+        }else{
+            printf("No\n");
+        }
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

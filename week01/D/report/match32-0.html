@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>week01/D/412430002_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412430002_D.c<p></p><pre>
+long long int ax , ay , bx , by , cx , cy;
+
+    scanf("%lld %lld %lld %lld %lld %lld",&amp;ax , &amp;ay , &amp;bx , &amp;by , &amp;cx , &amp;cy);
+
+    long long int D = pow(2,31) - 1;
+
+    long long int E = -pow(2,31);
+
+<a name="0"></a><font color="#FF0000"><a href="match32-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_25.gif"/></a>
+
+    if(ax &gt;= E &amp;&amp; ax &lt;= D &amp;&amp; ay &gt;= E &amp;&amp; ay &lt;= D &amp;&amp; bx &gt;= E &amp;&amp; bx &lt;= D &amp;&amp; by &gt;= E &amp;&amp; by &lt;= D &amp;&amp; cx &gt;= E &amp;&amp; cx &lt;= D &amp;&amp; cy &gt;= E &amp;&amp; cy &lt;= D){
+
+        if((ax - cx) * (by - cy) - (ay - cy) * (bx - cx) &gt; 0){
+
+            printf("left\n");
+
+        }else if((ax - cx) * (by - cy) - (ay - cy) * (bx - cx) &lt; 0){
+
+            printf("right\n");
+
+        }else if((ax - cx) * (by - cy) - (ay - cy) * (bx - cx) == 0){
+</font>
+            printf("touch\n ");
+
+        }
+
+    }
+
+    
+
+    return 0;</pre>
+</body>
+</html>

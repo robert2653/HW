@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>week01/D/412415074_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412415074_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+
+int main()
+{
+    long long int ax,ay,bx,by,cx,cy;
+    long long int e,f,g,h,z;
+    scanf("%lld %lld",&amp;ax,&amp;ay);
+    scanf("%lld %lld",&amp;bx,&amp;by);
+    scanf("%lld %lld",&amp;cx,&amp;cy);
+    e=ax-bx;
+<a name="0"></a><font color="#FF0000"><a href="match86-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_38.gif"/></a>
+
+    f=ay-by;
+    g=bx-cx;
+    h=by-cy;
+
+    z=e*h-f*g;
+    if(z&gt;0){
+        printf("Left");
+    }
+    else if(z&lt;0){
+        printf("Right");
+</font>    }
+    else{
+        printf("Touch");
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

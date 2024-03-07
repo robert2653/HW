@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>week01/D/412430002_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/412430009_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void) {
+<a name="0"></a><font color="#FF0000"><a href="match211-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_37.gif"/></a>
+
+    long long int x1, y1, x2, y2, xp, yp;
+    scanf("%lld %lld %lld %lld %lld %lld", &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;xp, &amp;yp);
+
+    long long int res = (y2 - y1) * xp + (x1 - x2) * yp + (x2 * y1 - x1 * y2);
+</font>    if(res &gt; 0) {
+        printf("Right");
+    } else if(res &lt; 0) {
+        printf("Left");
+    } else {
+        printf("Touch");
+    }
+}</pre>
+</body>
+</html>

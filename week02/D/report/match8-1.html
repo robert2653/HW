@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>week02/D/412415037_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412430022_D.c<p></p><pre>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+int main()
+{
+    int n=0,k=0,s=0,a=0,min=10,minn=10,odd=0;
+    scanf("%d",&amp;n);
+    for(int i=1;i&lt;=n;i++)
+    {
+        scanf(" %d %d",&amp;k,&amp;s);
+<a name="0"></a><font color="#FF0000"><a href="match8-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_58.gif"/></a>
+
+        for(int j=1;j&lt;=k;j++)
+        {
+            scanf(" %d",&amp;a);
+            if(a%2==0)
+            {
+                odd++;
+            }
+
+            if(a%s!=0)
+            {
+                minn=s-a%s;
+            }
+            else
+            {
+                minn=0;
+            }
+
+            if(minn&lt;min)
+            {
+                min=minn;
+            }
+        }
+        if(s==4 &amp;&amp; k&gt;=2)
+        {
+            if(odd&gt;=2)
+            {
+                min=0;
+            }
+            else
+            {
+                minn=2-odd;
+                if(minn&lt;min)
+                {
+                    min=minn;
+                }
+            }
+        }
+        printf("%d\n",min);
+        min=10;
+        minn=10;
+        odd=0;
+</font>    }
+    return 0;
+}</pre>
+</body>
+</html>

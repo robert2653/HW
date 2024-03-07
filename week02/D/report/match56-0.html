@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>week02/D/412415001_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412415001_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+<a name="0"></a><font color="#FF0000"><a href="match56-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_14.gif"/></a>
+
+int main()
+{
+    int n1, n2, k, max, num;
+    scanf("%d", &amp;n1);
+    for(int i = 0; i &lt; n1; i ++){
+        scanf("%d%d", &amp;n2, &amp;k);
+</font>        if(k == 4){
+            int u[4] = {0};
+            for(int j = 0; j &lt; n2; j ++){
+                scanf("%d", &amp;num);
+                u[num % 4] ++;
+            }
+            if(u[0] &gt; 0 || u[2] &gt; 1){
+                printf("0\n");
+            }else if((n2 != 1 &amp;&amp; u[2] == 1) || u[3] &gt; 0){
+                printf("1\n");
+            }else if(u[1] &gt; 1 || (u[2] == 1 &amp;&amp; n2 == 1)){
+                printf("2\n");
+            }else{
+                printf("3\n");
+            }
+        }else{
+            max = -1;
+            for(int j = 0; j &lt; n2; j ++){
+                scanf("%d", &amp;num);
+                if(num%k &gt; max)
+                    max = num%k;
+                if(num%k == 0){
+                    max = k;
+                }
+            }
+            printf("%d\n", k-max);
+        }
+    }
+}</pre>
+</body>
+</html>

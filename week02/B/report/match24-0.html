@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>week02/B/412415054_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412415054_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+    int t,x,i,j;
+    int prime;
+    scanf("%d",&amp;t);
+    int a[t];
+    for(j=0;j&lt;t;j++){
+        scanf("%d",&amp;x);
+        prime=1;
+
+        if(x&lt;2){
+            prime=0;
+        }
+        else{
+        for(i=2;i&lt;=sqrt(x);i++){//檢查到sqrt就好
+<a name="0"></a><font color="#FF0000"><a href="match24-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_35.gif"/></a>
+
+            if(x%i==0){
+                prime=0;
+                break;
+            }
+        }
+    }
+    a[j]=prime;
+    }
+    for(j=0;j&lt;t;j++){
+        if(a[j]==0){
+            printf("No\n");
+        }
+        else{
+            printf("Yes\n");
+        }
+    }
+    return 0;
+</font>}
+</pre>
+</body>
+</html>

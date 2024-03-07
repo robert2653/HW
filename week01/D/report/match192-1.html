@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>week01/D/412430043_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week01/D/410415005_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+<a name="0"></a><font color="#FF0000"><a href="match192-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_33.gif"/></a>
+
+int main() {
+    double ax, ay, bx, by, cx, cy, x1, y1, x2, y2, cro;
+    scanf("%lf %lf %lf %lf %lf %lf",&amp;ax, &amp;ay, &amp;bx, &amp;by, &amp;cx, &amp;cy);
+</font>    x1=(bx-ax);
+    y1=(by-ay);
+    x2=(cx-ax);
+    y2=(cy-ay);
+    cro=(x1*y2)-(x2*y1);
+    if (cro&gt;0)
+        printf("Left\n");
+    else if (cro&lt;0)
+        printf("Right\n");
+    else
+        printf("Touch\n");
+
+    return 0;
+}
+</pre>
+</body>
+</html>

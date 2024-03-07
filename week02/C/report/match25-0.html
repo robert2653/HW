@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>week02/C/412430032_C.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/C/412430032_C.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int num,count1,count2 = 1;
+    scanf("%d",&amp;num);
+    count1 = num;
+    for(int a = 0;a &lt; num-1; a++){
+        printf(" ");
+    }
+    printf("*\n");
+    for(int i = 0;i &lt; num-2;i++){
+        for(int j = 0;j &lt; count1 - 2;j++){
+            printf(" ");
+        }
+        printf("*");
+        count1 --;
+        for(int k = 0;k &lt; count2;k++){
+            printf(" ");
+        }
+        printf("*\n");
+        count2 = count2 + 2;
+    }
+<a name="0"></a><font color="#FF0000"><a href="match25-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_28.gif"/></a>
+
+    for(int b = 0 ;b &lt; 2*num-1;b++){
+    printf("*");
+}
+    printf("\n");
+    for(int c = 0;c &lt; num;c++){
+    for(int d = 0;d &lt; num-1;d++ ){
+</font>    printf(" ");
+    }
+    printf("*\n");
+    }
+    return 0;
+}
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>week02/B/412415029_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412415029_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int t,x;
+    scanf("%d", &amp;t);
+    while (t--)
+    {
+        scanf("%d", &amp;x);
+        if (test(x))
+        {
+            printf("Yes\n");
+        }
+        else
+        {
+            printf("No\n");
+        }
+    }
+    return 0;
+}
+<a name="0"></a><font color="#FF0000"><a href="match104-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_41.gif"/></a>
+
+int test(int n)
+{
+    if (n&lt;=1) return 0;
+    for (int i=2;i*i&lt;=n;i++)
+    {
+        if (n%i==0) return 0;
+</font>    }
+    return 1;
+}
+</pre>
+</body>
+</html>

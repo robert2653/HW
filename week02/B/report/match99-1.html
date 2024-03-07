@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>week02/B/412430013_B.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/B/412430026_B.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int is_prime(int x) {
+    if (x &lt;= 1) {
+        return 0;
+    }
+    int i;
+<a name="0"></a><font color="#FF0000"><a href="match99-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_28.gif"/></a>
+
+    for (i = 2; i * i &lt;= x; i++) {
+        if (x % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main() {
+    int t, i;
+    scanf("%d", &amp;t);
+</font>
+    int numbers[t];
+    for (i = 0; i &lt; t; i++) {
+        scanf("%d", &amp;numbers[i]);
+    }
+
+    for (i = 0; i &lt; t; i++) {
+        if (is_prime(numbers[i])) {
+            printf("Yes\n");
+        } else {
+            printf("No\n");
+        }
+    }
+
+    return 0;
+}
+</pre>
+</body>
+</html>

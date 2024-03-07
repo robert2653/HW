@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>week02/D/412430036_D.c</title>
+</head>
+<body bgcolor="white">
+<hr/>
+week02/D/412430036_D.c<p></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int a,n,k,t,p,c;
+    int res=1;
+<a name="1"></a><font color="#00FF00"><a href="match4-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_31.gif"/></a>
+
+    printf(" ");
+    scanf("%d",&amp;a);
+    for(int i=0;i&lt;a;i++){
+        res=1;
+        n=0;
+        k=0;
+        p=0;
+        c=1;
+        printf(" ");
+        scanf("%d%d",&amp;n,&amp;k);
+        int a[n];
+        int b[n];
+        printf(" ");
+        if(k==4){
+            for(int i=0;i&lt;n;i++){
+                scanf("%d",&amp;a[i]);
+                if(a[i]%2==0){
+                    p+=1;
+                }
+                b[i]=a[i]%k;
+</font>                c=c*b[i];
+<a name="0"></a><font color="#FF0000"><a href="match4-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_41.gif"/></a>
+
+                res=res*b[i];
+            }
+            if(res==0){
+                printf("0\n");
+            }
+            else if(p&gt;=2){
+                printf("0\n");
+            }
+            else if((p==1)&amp;&amp;(n&gt;1)){
+                printf("1\n");
+            }
+            else if((c==1)&amp;&amp;(n&gt;1)){
+                printf("2\n");
+            }
+            else{
+                t=b[0];
+                for(int i=1;i&lt;n;i++){
+                    if(b[i]&gt;t){
+                        t=b[i];
+                    }
+                }
+                    printf("%d\n",k-t);
+                }
+            }
+            else if((k==1)||(k==2)||(k==3)||(k==5)){
+                for(int i=0;i&lt;n;i++){
+                    scanf("%d",&amp;a[i]);
+                    b[i]=a[i]%k;
+</font><a name="2"></a><font color="#0000FF"><a href="match4-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_14.gif"/></a>
+
+                    res=res*b[i];
+                }
+                if(res==0){
+                    printf("0\n");
+                }
+                else{
+                    t=b[0];
+                    for(int i=1;i&lt;n;i++){
+                        if(b[i]&gt;t){
+                            t=b[i];
+                        }
+                    }
+                    printf("%d\n",k-t);
+                }
+            }
+
+        }
+        return 0;
+</font>    }
+
+</pre>
+</body>
+</html>
