@@ -18,7 +18,7 @@ def unzip_student(filename, dirname):
         with open(dirname + "/" + 'error_log.txt', 'a') as log_file:
             log_file.write(filename + ' ' + str(e) + '\n')
         return False
-    done = 0
+    state = 0   # 0: 不包含符合格式的 .c 檔, 1: 壓縮資料夾, 2: correct
     pattern = r'\d{9}_[A-Z]\.c'
     for name in zip.namelist(): 
         # print(name)
@@ -26,9 +26,19 @@ def unzip_student(filename, dirname):
             if os.listdir(dirname).count(name[10]) == 0:    # 開 A、B、C 資料夾在 weekXX
                 os.mkdir(dirname + "/" + name[10])
             zip.extract(name, dirname + "/" + name[10]) # 在 A、B、C 解壓縮
-            done = 1
-    print(filename, done)
-    return done
+            state = 2
+        
+        elif re.match(pattern, name):
+            name = name.split("/")[-1]
+            if (len(name) == 13):
+                print(name)
+                if os.listdir(dirname).count(name[10]) == 0:    # 開 A、B、C 資料夾在 weekXX
+                    os.mkdir(dirname + "/" + name[10])
+                zip.extract(name, dirname + "/" + name[10]) # 在 A、B、C 解壓縮
+                state = 1
+
+    print(filename, state)
+    return state
         
 def unzip_ecourse(filename, dirname): # dirname = weekXX
     # print(filename, dirname)
@@ -42,14 +52,13 @@ def unzip_ecourse(filename, dirname): # dirname = weekXX
             success += 1
             zip.extract(name, dirname) # 解壓縮到 weekXX，會是 [學號 名字_亂碼.zip]
             done = unzip_student(dirname + "/" + name, dirname) # 如果這個 zip 沒有包含符合格式的檔案
-            if not done:
+            if done == 0:
                 success -= 1
-                # if os.listdir(dirname).count("wrong_format") == 0:
-                #     os.mkdir(dirname + "/wrong_format")
-                # if os.listdir(dirname + "/wrong_format").count(name) == 0:
-                #     shutil.move(dirname + "/" + name, dirname + "/wrong_format") # 把它移到 wrong format 資料夾
                 with open(dirname + "/" + 'error_log.txt', 'a', encoding = 'UTF-8') as log_file:
-                    log_file.write(name + ' is wrong format\n')
+                    log_file.write(name + ' is doesnt include .c file being correct format\n')
+            elif done == 1:
+                with open(dirname + "/" + 'error_log.txt', 'a', encoding = 'UTF-8') as log_file:
+                    log_file.write(name + ' is unzip as dir\n')
 
     print("Success", success, "Total", cnt, '\n-------------------------')
 if __name__ == "__main__":
