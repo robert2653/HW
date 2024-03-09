@@ -4,8 +4,7 @@ import mosspy
 # 913322459
 # 54755698
 userid = 913322459
-
-folder = "week01/D/"
+folder = "week02/D/"
 
 m = mosspy.Moss(userid, "python")
 

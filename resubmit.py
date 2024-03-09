@@ -6,11 +6,13 @@ from datetime import datetime
 import os
 import zipfile
 
-folder_path = 'week02/B'
-contest_id = "HW02"
-username = "as6325400"
+folder_path = 'week01/A'
+problem_id = "two_num_add"
+contest_id = "HW01"
+
+
+username = "resubmit"
 password = "1234567890"
-problem_id = "chrismas_tree"
 language_id = "c"
 url = f'https://pgds.csie.io/api/v4/contests/{contest_id}/submissions'
 
@@ -35,30 +37,42 @@ def delete_all_zip():
             # 刪除 .zip 檔案
             os.remove(file_path)
             print(f"Deleted: {filename}")
+            
+def get_zip_file_path():
+    table = []
+    for filename in tqdm(os.listdir(folder_path)):
+        if filename.endswith('.zip'):
+            table.append(filename)
+    return table
 
 def main():
-            
-    zip_file_path = 'test.zip'
-    with open(zip_file_path, 'rb') as zip_file:
-        zip_content = zip_file.read()
+    zip_submit_file()
+    table = get_zip_file_path()
+    for zipfilepath in table:
+        with open(folder_path + '/' + zipfilepath, 'rb') as zip_file:
+            zip_content = zip_file.read()
         
-    data = {
-        "problem_id": problem_id,
-        "language_id": language_id,
-        "time": str(datetime.now()),
-        "files": [
-            {
-                
-            }
-        ]
-    }
+        data = {
+            "problem_id": problem_id,
+            "language_id": language_id,
+            "time": str(datetime.now()),
+            "files": [
+                {
+                    "data" : base64.b64encode(zip_content).decode('utf-8')
+                }
+            ]
+        }
 
 
-    json_data = json.dumps(data)
+        json_data = json.dumps(data)
 
 
-    response = requests.post(url, data=json_data, headers={'Content-Type': 'application/json'}, auth=(username, password))
+        response = requests.post(url, data=json_data, headers={'Content-Type': 'application/json'}, auth=(username, password))
 
 
-    print(response.status_code)  
-    print(response.text)         
+        print(response.status_code)  
+        print(response.text)         
+    delete_all_zip()
+    
+if __name__ == "__main__":
+    main()
