@@ -4,3 +4,4 @@ token.json
 *.c
 **/error_log.txt
 .env
+week*/
