@@ -1,1 +1,4 @@
 mosspy==1.0.9
+tqdm==4.66.2  
+env==0.1.0 
+requests==2.31.0 

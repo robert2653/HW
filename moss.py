@@ -1,9 +1,11 @@
 import mosspy
+from dotenv import load_dotenv
+import os
 
-# 476017450
-# 913322459
-# 54755698
-userid = 913322459
+load_dotenv()
+
+
+userid = os.getenv("MOSSID")
 folder = "week02/D/"
 
 m = mosspy.Moss(userid, "python")

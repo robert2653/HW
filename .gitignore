@@ -1,1 +1,6 @@
 *.zip
+token.json
+*.html
+*.c
+**/error_log.txt
+.env

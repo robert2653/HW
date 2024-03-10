@@ -5,16 +5,19 @@ from tqdm import tqdm
 from datetime import datetime
 import os
 import zipfile
+from dotenv import load_dotenv
 
-folder_path = 'week01/A'
-problem_id = "two_num_add"
-contest_id = "HW01"
+load_dotenv()
 
-
-username = "resubmit"
-password = "1234567890"
+folder_path = '' # week01/A
+problem_id = "" # two_num_add
+contest_id = "" # HW01
+judge_url = "" # pgds.csie.io
+ 
+username = os.getenv("APIUSERNAME")
+password = os.getenv("APIPASSWORD")
 language_id = "c"
-url = f'https://pgds.csie.io/api/v4/contests/{contest_id}/submissions'
+url = f'https://{judge_url}/api/v4/contests/{contest_id}/submissions'
 
 def zip_submit_file():
     for filename in tqdm(os.listdir(folder_path)):
