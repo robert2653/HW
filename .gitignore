@@ -5,3 +5,5 @@ token.json
 **/error_log.txt
 .env
 week*/
+bonus.txt
+bonus/*.txt

@@ -9,7 +9,7 @@ import time
 load_dotenv()
 
 # excel
-week = 'D' # 這週在 excel 上的 col
+week = 'C' # 這週在 excel 上的 col
 survey_url = 'https://docs.google.com/spreadsheets/d/1GwaWkhfv8q_Qeks4QQyzdrXX6icnKxemNpl1dV6a_AU/edit#gid=856451132' # 表單連結
 grade = {
     'A' : 30,
@@ -89,12 +89,12 @@ def main():
     for i, info in tqdm(all_grade.items()):
         if i not in excel_id:
             continue
-        print(i, info)
-        # excel_user_id = excel_id[i]
-        # index = f'{week}{excel_user_id}'
-        # val = str(info['score'])
-        # ws.update_value(index, val)
-        # time.sleep(1)
+        # print(i, info)
+        excel_user_id = excel_id[i]
+        index = f'{week}{excel_user_id}'
+        val = str(info['score'])
+        ws.update_value(index, val)
+        time.sleep(1)
         
 if __name__ == "__main__":
     main()
