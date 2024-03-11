@@ -2,13 +2,40 @@ import os
 import zipfile
 import shutil
 import re
+from tqdm import tqdm
+correct_c_file = r'\d{9}_[A-Z]\.c'
 
 def clean(dirname): # dirname = weekXX
     for dir in os.listdir(dirname):
         if dir == "error_log.txt" or dir == "wrong_format":
             continue
-        if len(dir) != 1:   # 不是長度為 1 的資料夾的話，要刪掉
-            shutil.rmtree(dirname + "/" + dir)
+        if not (len(dir) == 1 and os.path.isdir(os.getcwd() + "/" + dirname + "/" + dir)):
+            try:
+                os.remove(dirname + "/" + dir)
+            except:
+                shutil.rmtree(dirname + "/" + dir)
+
+def traverse_folder(folder_path, dirname):
+    # 獲取資料夾中的所有檔案和子目錄
+    for item in os.listdir(folder_path):
+        try:
+        # 構建完整的路徑
+            item_path = os.path.join(folder_path, item)
+            if os.path.isfile(item_path):
+            # 如果是檔案，列印檔案名稱
+                if re.match(correct_c_file, item) and len(item) == 13:
+                    if os.listdir(dirname).count(item[10]) == 0:
+                        os.mkdir(dirname + "/" + item[10])
+                    shutil.move(item_path, os.path.join(os.getcwd() + "/" + dirname + "/", item[10]))
+            
+            elif os.path.isdir(item_path):
+                # 如果是目錄，列印目錄名稱，並遞迴處理目錄
+                traverse_folder(item_path, dirname)
+            # 指定資料夾路徑
+        except Exception as e:
+            # Log the error message to error_log.txt
+            with open(dirname + "/" + 'error_log.txt', 'a') as log_file:
+                log_file.write(item_path +'' + str(e) + '\n')
 
 def unzip_student(filename, dirname):
     try:
@@ -18,49 +45,19 @@ def unzip_student(filename, dirname):
         with open(dirname + "/" + 'error_log.txt', 'a') as log_file:
             log_file.write(filename + ' ' + str(e) + '\n')
         return False
-    state = 0   # 0: 不包含符合格式的 .c 檔, 1: 壓縮資料夾, 2: correct
-    pattern = r'\d{9}_[A-Z]\.c'
-    for name in zip.namelist(): 
-        # print(name)
-        if len(name) == 13 and re.match(pattern, name):
-            if os.listdir(dirname).count(name[10]) == 0:    # 開 A、B、C 資料夾在 weekXX
-                os.mkdir(dirname + "/" + name[10])
-            zip.extract(name, dirname + "/" + name[10]) # 在 A、B、C 解壓縮
-            state = 2
-        
-        elif re.match(pattern, name):
-            name = name.split("/")[-1]
-            if (len(name) == 13):
-                print(name)
-                if os.listdir(dirname).count(name[10]) == 0:    # 開 A、B、C 資料夾在 weekXX
-                    os.mkdir(dirname + "/" + name[10])
-                zip.extract(name, dirname + "/" + name[10]) # 在 A、B、C 解壓縮
-                state = 1
-
-    print(filename, state)
-    return state
+    zip.extractall(dirname)
         
 def unzip_ecourse(filename, dirname): # dirname = weekXX
     # print(filename, dirname)
     assert (zipfile.is_zipfile(filename))
     zip = zipfile.ZipFile(filename)
-    cnt = 0
-    success = 0
-    for name in zip.namelist():
+    for name in tqdm(zip.namelist()):
         if name.find("_assignsubmission_file") != -1:   # 同學會有 2 個檔案，這個才是他的 zip
-            cnt += 1
-            success += 1
             zip.extract(name, dirname) # 解壓縮到 weekXX，會是 [學號 名字_亂碼.zip]
-            done = unzip_student(dirname + "/" + name, dirname) # 如果這個 zip 沒有包含符合格式的檔案
-            if done == 0:
-                success -= 1
-                with open(dirname + "/" + 'error_log.txt', 'a', encoding = 'UTF-8') as log_file:
-                    log_file.write(name + ' is doesnt include .c file being correct format\n')
-            elif done == 1:
-                with open(dirname + "/" + 'error_log.txt', 'a', encoding = 'UTF-8') as log_file:
-                    log_file.write(name + ' is unzip as dir\n')
+            unzip_student(dirname + "/" + name, dirname) # 如果這個 zip 沒有包含符合格式的檔案
 
-    print("Success", success, "Total", cnt, '\n-------------------------')
+    traverse_folder(os.getcwd() + "/" + dirname, dirname) # 遍歷 weekXX
+
 if __name__ == "__main__":
     # 把 Ecourse 的 zip 檔載下來，命名成 weekXX...，前六個字要對就好
     files = os.listdir()
