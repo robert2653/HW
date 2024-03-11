@@ -4,6 +4,8 @@ import shutil
 import re
 from tqdm import tqdm
 correct_c_file = r'\d{9}_[A-Z]\.c'
+from tqdm import tqdm
+correct_c_file = r'\d{9}_[A-Z]\.c'
 
 def clean(dirname): # dirname = weekXX
     for dir in os.listdir(dirname):
