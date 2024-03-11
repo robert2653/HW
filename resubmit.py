@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-folder_path = 'week02/D' # week01/A
-problem_id = "seriesmultiply" # two_num_add
-contest_id = "HW02" # HW01
+folder_path = 'week03/A' # week01/A
+problem_id = "house1" # two_num_add
+contest_id = "HW03" # HW01
 judge_url = "pgds.csie.io" # pgds.csie.io
  
 username = os.getenv("APIUSERNAME")

@@ -6,7 +6,7 @@ load_dotenv()
 
 
 userid = os.getenv("MOSSID")
-folder = "week01/D/"
+folder = "week03/A/"
 
 m = mosspy.Moss(userid, "python")
 

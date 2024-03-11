@@ -9,12 +9,12 @@ import time
 load_dotenv()
 
 # excel
-week = 'C' # 這週在 excel 上的 col
+week = 'E' # 這週在 excel 上的 col
 survey_url = 'https://docs.google.com/spreadsheets/d/1GwaWkhfv8q_Qeks4QQyzdrXX6icnKxemNpl1dV6a_AU/edit#gid=856451132' # 表單連結
 grade = {
-    'A' : 30,
+    'A' : 40,
     'B' : 30,
-    'C' : 30,
+    'C' : 20,
     'D' : 10
  }
 
@@ -23,7 +23,7 @@ grade = {
 username = os.getenv("ADMINUSERNAME")
 password = os.getenv("ADMINPASSWORD")
 resubmit_team_id = os.getenv("RESUBMITTEAMID")
-cid = "HW01"
+cid = "HW03"
 api_url = f'https://pgds.csie.io/api/v4/contests/{cid}/judgements'
 
 
@@ -93,6 +93,9 @@ def main():
         excel_user_id = excel_id[i]
         index = f'{week}{excel_user_id}'
         val = str(info['score'])
+        old_val = ws.get_value(index)
+        if val != old_val:
+            print(i, info)
         ws.update_value(index, val)
         time.sleep(1)
         
