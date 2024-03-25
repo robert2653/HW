@@ -9,11 +9,11 @@ import time
 load_dotenv()
 
 # excel
-week = 'F' # 這週在 excel 上的 col
+week = 'C' # 這週在 excel 上的 col
 survey_url = 'https://docs.google.com/spreadsheets/d/1GwaWkhfv8q_Qeks4QQyzdrXX6icnKxemNpl1dV6a_AU/edit#gid=1484966969' # 表單連結
 
 # text
-bonus_txt = "bonus4.txt"
+bonus_txt = "bonus1.txt"
 
 # bonus rule
 grade = "0.5"
