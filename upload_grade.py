@@ -12,10 +12,10 @@ load_dotenv()
 week = 'G' # 這週在 excel 上的 col
 survey_url = 'https://docs.google.com/spreadsheets/d/1GwaWkhfv8q_Qeks4QQyzdrXX6icnKxemNpl1dV6a_AU/edit#gid=856451132' # 表單連結
 grade = {
-    'A' : 30,
-    'B' : 30,
-    'C' : 30,
-    'D' : 10
+    'A' : 40,
+    'B' : 20,
+    'C' : 20,
+    'D' : 20
  }
 
 
@@ -23,7 +23,7 @@ grade = {
 username = os.getenv("ADMINUSERNAME")
 password = os.getenv("ADMINPASSWORD")
 resubmit_team_id = os.getenv("RESUBMITTEAMID")
-cid = "HW04"
+cid = "HW05"
 api_url = f'https://pgds.csie.io/api/v4/contests/{cid}/judgements'
 
 

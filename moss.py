@@ -6,9 +6,11 @@ load_dotenv()
 
 
 userid = os.getenv("MOSSID")
-folder = "week04/C/"
+folder = "week05/B/"
 
 m = mosspy.Moss(userid, "python")
+
+
 
 # Submission Files
 m.addFilesByWildcard(folder + "*.c")

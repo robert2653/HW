@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-folder_path = 'week04/A' # week01/A
-problem_id = "GCD" # two_num_add
-contest_id = "HW04" # HW01
+folder_path = 'week05/D' # week01/A
+problem_id = "password" # two_num_add
+contest_id = "HW05" # HW01
 judge_url = "pgds.csie.io" # pgds.csie.io
  
 username = os.getenv("APIUSERNAME")
@@ -43,7 +43,7 @@ def zip_submit_file():
             file_path = os.path.join(folder_path, filename)
             
             # 僅限給第五週檢查中括號用
-            if judge(file_path) == False: continue
+            # if judge(file_path) == False: continue
             
             # 創建與 .c 檔案同名的 zip 檔案路徑
             zipfilename = filename[:-2]
