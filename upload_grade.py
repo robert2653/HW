@@ -9,22 +9,23 @@ import time
 load_dotenv()
 
 # excel
-week = 'G' # 這週在 excel 上的 col
-survey_url = 'https://docs.google.com/spreadsheets/d/1GwaWkhfv8q_Qeks4QQyzdrXX6icnKxemNpl1dV6a_AU/edit#gid=856451132' # 表單連結
+week = 'C' # 這週在 excel 上的 col
+survey_url = os.getenv("SHEET_URL") # 表單連結
 grade = {
-    'A' : 40,
-    'B' : 20,
-    'C' : 20,
-    'D' : 20
+    'A' : 30,
+    'B' : 30,
+    'C' : 30,
+    'D' : 10
  }
 
 
 # Domjudge
 username = os.getenv("ADMINUSERNAME")
 password = os.getenv("ADMINPASSWORD")
-resubmit_team_id = os.getenv("RESUBMITTEAMID")
-cid = "HW05"
-api_url = f'https://pgds.csie.io/api/v4/contests/{cid}/judgements'
+resubmit_team_id = os.getenv("APIUSERNAME")
+domjudge_url = os.getenv("DOMJUDGE_URL")
+cid = "HW02"
+api_url = f'https://{domjudge_url}/api/v4/contests/{cid}/judgements'
 
 
 # 獲取 學號對應欄位，學好 col 在第一欄
@@ -44,7 +45,7 @@ def get_cid_submit():
     return table
 
 def get_resummit_submit(AC_SET : dict):
-    get_resubmit_api = f"https://pgds.csie.io/api/v4/contests/{cid}/submissions"
+    get_resubmit_api = f"https://{domjudge_url}/api/v4/contests/{cid}/submissions"
     response = requests.get(get_resubmit_api, auth=(username, password))
     json_data = json.loads(response.text)
     table = []
@@ -55,7 +56,7 @@ def get_resummit_submit(AC_SET : dict):
     return table
 
 def get_problem_and_student(id : str):
-    api = f"https://pgds.csie.io/api/v4/contests/{cid}/submissions/{id}/source-code"
+    api = f"https://{domjudge_url}/api/v4/contests/{cid}/submissions/{id}/source-code"
     response = requests.get(api, auth=(username, password))
     json_data = json.loads(response.text)
     return {'problem' : json_data[0]['filename'][10], 'userid': json_data[0]['filename'][:9]}
