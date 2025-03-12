@@ -25,7 +25,7 @@ def traverse_folder(folder_path, dirname): # folder_path 遍歷時當前資料�
                         os.mkdir(dirname + "/" + item[10]) # 建一個題目資料夾在 weekXX
                     shutil.move(item_path, os.path.join(os.getcwd() + "/" + dirname + "/", item[10])) # 移動 item 到題目資料夾內
             
-            elif os.path.isdir(item_path): # 如果 item 是資料夾
+            elif os.path.isdir(item_path) and not item.startswith('__MACOSX'): # 如果 item 是資料夾, 忽略 __MACOSX
                 traverse_folder(item_path, dirname) # dfs
 
         except Exception as e: # 通常是捕捉到重複提交，導致移動檔案時錯誤
